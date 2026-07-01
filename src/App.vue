@@ -69,8 +69,8 @@ const navigateTo = (page) => {
 
       <footer class="footer">
         <div class="container">
-          <p>&copy; {{ new Date().getFullYear() }} 大象 · 用 ❤️ 和 Vue 3 + Vite 构建</p>
-          <p class="footer-tagline">不断学习，持续进步 · 面试腾讯</p>
+          <p>&copy; {{ new Date().getFullYear() }} fuzhichao · 用 ❤️ 和 Vue 3 + Vite 构建</p>
+          <p class="footer-tagline">不断学习，持续进步</p>
         </div>
       </footer>
     </div>

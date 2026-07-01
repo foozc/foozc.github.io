@@ -35,7 +35,7 @@ const navItems = [
 </script>
 
 <template>
-  <!-- 移动端汉堡按钮 -->
+  <!-- 汉堡按钮 -->
   <button class="hamburger" @click="isOpen = !isOpen" :class="{ active: isOpen }" aria-label="菜单">
     <span></span><span></span><span></span>
   </button>
@@ -50,8 +50,8 @@ const navItems = [
       <div class="sidebar-logo" @click="emit('navigate', 'home'); closeMenu()">
         <div class="logo-icon">{{ codeIcon }}</div>
         <div class="logo-text">
-          <span class="logo-title">大象</span>
-          <span class="logo-subtitle">Frontend Dev</span>
+          <span class="logo-title">fuzhichao</span>
+          <span class="logo-subtitle">前端工程师</span>
         </div>
       </div>
 
@@ -83,7 +83,6 @@ const navItems = [
         </div>
         <div class="sidebar-meta">
           <span>v1.0</span>
-          <span>面试用</span>
         </div>
       </div>
     </div>
@@ -178,13 +177,14 @@ const navItems = [
   background: linear-gradient(135deg, var(--accent), #f472b6);
   color: white;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
+  font-family: monospace;
   flex-shrink: 0;
 }
 .logo-text { display: flex; flex-direction: column; }
-.logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-primary); }
-.logo-subtitle { font-size: 0.75rem; color: var(--text-muted); }
+.logo-title { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); }
+.logo-subtitle { font-size: 0.7rem; color: var(--text-muted); }
 
 /* ── 导航 ── */
 .sidebar-nav {
@@ -262,20 +262,17 @@ const navItems = [
 .theme-btn { font-size: 1.1rem; padding: 8px 12px; }
 
 .sidebar-meta {
-  display: flex;
-  justify-content: space-between;
   font-size: 0.7rem;
   color: var(--text-muted);
   padding: 0 4px;
+  text-align: center;
 }
 
 /* ── 响应式 ── */
-/* iPad 横屏及以上：固定侧边栏 */
 @media (min-width: 1024px) {
   .sidebar { transform: translateX(0) !important; }
 }
 
-/* iPad 竖屏 & 平板：可收起侧边栏 */
 @media (max-width: 1023px) {
   .hamburger { display: flex; }
   .overlay { display: block; }
@@ -287,11 +284,17 @@ const navItems = [
   .sidebar.open { transform: translateX(0); }
 }
 
-/* 小屏手机 */
+/* iPhone 竖屏 */
 @media (max-width: 480px) {
-  .sidebar { width: 240px; }
+  .sidebar { width: 100%; max-width: 280px; }
+  .sidebar-inner { padding: 20px 14px; }
   .nav-item { padding: 10px 12px; }
   .nav-icon { font-size: 1.2rem; width: 32px; height: 32px; }
   .nav-label { font-size: 0.9rem; }
+  .nav-desc { display: none; }
+  .sidebar-logo { margin-bottom: 20px; }
+  .logo-icon { width: 38px; height: 38px; font-size: 0.8rem; }
+  .logo-title { font-size: 1rem; }
+  .admin-btn span { display: none; }
 }
 </style>
