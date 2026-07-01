@@ -16,7 +16,7 @@ const editingPost = ref(null)
 const editForm = ref({ title: '', content: '', tags: '', category: '', date: '' })
 
 const login = () => {
-  if (password.value === 'admin123') {
+  if (password.value === 'fzc') {
     isLoggedIn.value = true
     passwordError.value = false
     loadData()
@@ -166,7 +166,7 @@ const addProject = () => {
                placeholder="输入密码" @keyup.enter="login" />
         <p v-if="passwordError" class="error-msg">密码错误，请重试</p>
         <button class="login-btn" @click="login">登录</button>
-        <p class="login-hint">默认密码：admin123</p>
+        <p class="login-hint">默认密码：fzc</p>
       </div>
     </div>
 
