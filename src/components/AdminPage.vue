@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { posts as defaultPosts } from '../data/blog.js'
 import { resume as defaultResume } from '../data/resume.js'
 
@@ -29,8 +29,8 @@ const loadData = () => {
   const saved = localStorage.getItem('blog-admin-data')
   if (saved) {
     const data = JSON.parse(saved)
-    blogPosts.value = data.posts || defaultPosts
-    resumeData.value = data.resume || defaultResume
+    blogPosts.value = data.posts || JSON.parse(JSON.stringify(defaultPosts))
+    resumeData.value = data.resume || JSON.parse(JSON.stringify(defaultResume))
   } else {
     blogPosts.value = JSON.parse(JSON.stringify(defaultPosts))
     resumeData.value = JSON.parse(JSON.stringify(defaultResume))
@@ -97,22 +97,12 @@ const deletePost = (id) => {
   }
 }
 
-// 简历编辑
-const resumeFields = ref({
-  name: '',
-  title: '',
-  email: '',
-  summary: ''
-})
-
-const editResumeField = (field) => {
-  resumeFields.value[field] = resumeData.value.basics[field]
-}
-
-const saveResumeField = (field) => {
-  resumeData.value.basics[field] = resumeFields.value[field]
-  saveData()
-}
+// 简历自动保存
+watch(resumeData, () => {
+  if (resumeData.value) {
+    saveData()
+  }
+}, { deep: true })
 
 const addWorkExp = () => {
   resumeData.value.work.push({
@@ -238,20 +228,21 @@ const addProject = () => {
         <div class="resume-edit">
           <div class="form-group">
             <label>姓名</label>
-            <input v-model="resumeData.basics.name" class="form-input" @change="saveData" />
+            <input v-model="resumeData.basics.name" class="form-input" placeholder="输入姓名" />
           </div>
           <div class="form-group">
             <label>职位</label>
-            <input v-model="resumeData.basics.title" class="form-input" @change="saveData" />
+            <input v-model="resumeData.basics.title" class="form-input" placeholder="输入职位" />
           </div>
           <div class="form-group">
             <label>邮箱</label>
-            <input v-model="resumeData.basics.email" class="form-input" @change="saveData" />
+            <input v-model="resumeData.basics.email" class="form-input" placeholder="输入邮箱" />
           </div>
           <div class="form-group">
             <label>个人简介</label>
-            <textarea v-model="resumeData.basics.summary" class="form-textarea" rows="3" @change="saveData"></textarea>
+            <textarea v-model="resumeData.basics.summary" class="form-textarea" rows="3" placeholder="输入个人简介"></textarea>
           </div>
+          <div class="save-hint">💾 自动保存</div>
         </div>
 
         <div class="section-header" style="margin-top: 24px">

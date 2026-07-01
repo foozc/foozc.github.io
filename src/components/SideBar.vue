@@ -51,7 +51,7 @@ const navItems = [
         <div class="logo-icon">{{ codeIcon }}</div>
         <div class="logo-text">
           <span class="logo-title">fuzhichao</span>
-          <span class="logo-subtitle">前端工程师</span>
+          <span class="logo-subtitle">软件经理</span>
         </div>
       </div>
 
