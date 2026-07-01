@@ -144,7 +144,7 @@ body {
 
 .main-content {
   flex: 1;
-  padding: 32px 0;
+  padding: 32px 48px;
 }
 
 /* 页面顶部指示器 */
@@ -219,7 +219,15 @@ body {
 /* iPad 竖屏 & 平板 (< 1024px)：全屏模式 */
 @media (max-width: 1023px) {
   .main-wrapper { margin-left: 0; padding-top: 0; }
-  .main-content { padding: 20px 0; }
+  .main-content { padding: 20px 16px; }
   .container { padding: 0 16px; }
+}
+
+/* iPhone 竖屏 */
+@media (max-width: 480px) {
+  .main-content { padding: 56px 12px 20px; }
+  .page-indicator { padding: 0 12px; margin-bottom: 16px; }
+  .container { padding: 0 12px; }
+  .footer { padding: 20px 12px; }
 }
 </style>

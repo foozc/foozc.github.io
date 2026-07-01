@@ -47,7 +47,7 @@ const navItems = [
   <aside class="sidebar" :class="{ open: isOpen }">
     <div class="sidebar-inner">
       <!-- Logo -->
-      <div class="sidebar-logo" @click="emit('navigate', 'home'); closeMenu()">
+      <div class="sidebar-logo" @click="emit('navigate', 'resume'); closeMenu()">
         <div class="logo-icon">{{ codeIcon }}</div>
         <div class="logo-text">
           <span class="logo-title">fuzhichao</span>
@@ -96,7 +96,7 @@ const navItems = [
   position: fixed;
   top: 12px;
   left: 12px;
-  z-index: 1100;
+  z-index: 1110;
   width: 40px;
   height: 40px;
   background: var(--bg-card);
@@ -128,9 +128,10 @@ const navItems = [
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 1000;
+  background: rgba(0,0,0,0.35);
+  z-index: 1100;
   backdrop-filter: blur(2px);
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ── 侧边栏 ── */
@@ -142,10 +143,11 @@ const navItems = [
   width: 260px;
   background: var(--bg-card);
   border-right: 1px solid var(--border);
-  z-index: 100;
+  z-index: 1101;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-overflow-scrolling: touch;
 }
 
 .sidebar-inner {
@@ -154,6 +156,7 @@ const navItems = [
   height: 100%;
   padding: 24px 16px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ── Logo ── */
@@ -166,6 +169,7 @@ const navItems = [
   cursor: pointer;
   border-radius: var(--radius-sm);
   transition: var(--transition);
+  -webkit-tap-highlight-color: transparent;
 }
 .sidebar-logo:hover { background: var(--accent-light); }
 
@@ -204,6 +208,8 @@ const navItems = [
   transition: all 0.25s ease;
   color: var(--text-secondary);
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .nav-item:hover {
   background: var(--accent-light);
@@ -253,6 +259,8 @@ const navItems = [
   cursor: pointer;
   font-size: 0.85rem;
   transition: var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .tool-btn:hover {
   border-color: var(--accent);
@@ -296,5 +304,6 @@ const navItems = [
   .logo-icon { width: 38px; height: 38px; font-size: 0.8rem; }
   .logo-title { font-size: 1rem; }
   .admin-btn span { display: none; }
+  .hamburger { top: 8px; left: 8px; width: 36px; height: 36px; }
 }
 </style>
