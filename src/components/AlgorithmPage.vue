@@ -63,8 +63,8 @@ const getDifficultyColor = (d) => {
 </template>
 
 <style scoped>
-.hero { text-align: center; padding: 100px 0 60px; }
-.hero-title { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #e74c3c, #f39c12); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
+.hero { text-align: center; padding: 20px 0 48px; }
+.hero-title { font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #e74c3c, #f39c12); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
 .hero-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 24px; }
 .hero-stats { display: flex; justify-content: center; gap: 24px; }
 .stat-item { color: var(--text-muted); font-size: 0.9rem; }

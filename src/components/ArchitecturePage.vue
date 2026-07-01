@@ -71,7 +71,7 @@ const renderChildren = (children) => {
 </template>
 
 <style scoped>
-.hero { text-align: center; padding: 100px 0 60px; }
+.hero { text-align: center; padding: 20px 0 48px; }
 .hero-title { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
 .hero-subtitle { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
 .arch-section { margin-bottom: 48px; }

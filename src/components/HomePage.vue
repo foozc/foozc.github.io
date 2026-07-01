@@ -65,11 +65,11 @@ const getCategoryColor = (cat) => categoryColors[cat] || '#6c757d'
 <style scoped>
 .hero {
   text-align: center;
-  padding: 100px 0 60px;
+  padding: 20px 0 48px;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--accent), #f472b6);
   -webkit-background-clip: text;

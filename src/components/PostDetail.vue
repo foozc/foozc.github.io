@@ -25,7 +25,7 @@ const emit = defineEmits(['back'])
 
 <style scoped>
 .post-detail {
-  padding: 100px 0 60px;
+  padding: 0 0 40px;
 }
 
 .back-btn {

@@ -35,7 +35,7 @@ const games = [
 </template>
 
 <style scoped>
-.hero { text-align: center; padding: 100px 0 60px; }
+.hero { text-align: center; padding: 20px 0 48px; }
 .hero-title { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
 .hero-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
 .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-bottom: 60px; }

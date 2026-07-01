@@ -103,7 +103,7 @@ import { resume } from '../data/resume.js'
 
 <style scoped>
 .resume {
-  padding: 100px 0 60px;
+  padding: 0 0 40px;
 }
 
 .resume-header {

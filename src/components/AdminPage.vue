@@ -298,7 +298,7 @@ const addProject = () => {
 </template>
 
 <style scoped>
-.login-container { min-height: 80vh; display: flex; align-items: center; justify-content: center; }
+.login-container { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding-top: 0; }
 .login-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; text-align: center; box-shadow: var(--shadow); max-width: 400px; width: 100%; }
 .login-card h1 { margin-bottom: 8px; }
 .login-desc { color: var(--text-muted); margin-bottom: 20px; }
@@ -307,7 +307,7 @@ const addProject = () => {
 .login-btn:hover { background: var(--accent-hover); }
 .error-msg { color: #e74c3c; font-size: 0.85rem; margin-bottom: 8px; }
 .login-hint { color: var(--text-muted); font-size: 0.8rem; margin-top: 12px; }
-.admin-panel { padding: 100px 0 60px; }
+.admin-panel { padding: 0 0 40px; }
 .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
 .admin-header h1 { font-size: 1.5rem; }
 .nav-btn { padding: 8px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-card); color: var(--text-primary); cursor: pointer; transition: var(--transition); }
