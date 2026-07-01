@@ -156,7 +156,6 @@ const addProject = () => {
                placeholder="输入密码" @keyup.enter="login" />
         <p v-if="passwordError" class="error-msg">密码错误，请重试</p>
         <button class="login-btn" @click="login">登录</button>
-        <p class="login-hint">默认密码：fzc</p>
       </div>
     </div>
 
