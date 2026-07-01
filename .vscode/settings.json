@@ -1,0 +1,25 @@
+{
+    // 文件编码设置为 UTF-8
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": false,
+    
+    // 终端编码设置
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "args": ["-NoExit", "-Command", "chcp 65001"]
+        },
+        "Command Prompt": {
+            "path": "C:\\WINDOWS\\system32\\cmd.exe",
+            "args": ["/K", "chcp 65001"]
+        }
+    },
+    
+    // 新建文件默认 UTF-8
+    "files.defaultLanguage": "zh-CN",
+    
+    // 保存时自动处理编码
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+}
