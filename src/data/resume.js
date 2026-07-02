@@ -1,6 +1,6 @@
 export const resume = {
   basics: {
-    name: '付志超',
+    name: '付直超',
     title: '软件经理 · PMP',
     email: 'fuzhichao@example.com',
     phone: '138-0000-0000',
@@ -67,7 +67,7 @@ export const resume = {
   ],
   education: [
     {
-      school: '武汉理工大学',
+      school: '武汉经济学院',
       degree: '本科',
       major: '计算机科学与技术',
       startDate: '2012-09',
