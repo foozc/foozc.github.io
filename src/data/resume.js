@@ -2,8 +2,8 @@ export const resume = {
   basics: {
     name: '付直超',
     title: '软件经理 · PMP',
-    email: 'fuzhichao@example.com',
-    phone: '138-0000-0000',
+    email: 'foozc@outlook.com',
+    phone: '13125068488',
     location: '中国 · 武汉',
     summary: '8年软件项目管理经验，兼具技术底蕴与规模化交付能力，持有PMP认证。复合型技术管理背景：4年Unity3D/UE4开发转项目经理，擅长以敏捷思维驱动复杂软件项目的全生命周期交付。对游戏引擎、跨平台发布、云平台架构及Linux服务器环境有实操级理解，熟练使用Project、Git、Visual Studio等工具链。具有大规模版本管理与软硬协同经验，在华为主导旗舰平板产品的软件交付，管理600+系统版本并行构建与发布。精通从需求预研、技术标底编制、研发实施到竣工审计的全链路管理，累计主导交付35+项目，含千万级大型复杂项目。',
     links: [
