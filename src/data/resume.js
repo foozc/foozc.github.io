@@ -67,7 +67,7 @@ export const resume = {
   ],
   education: [
     {
-      school: '武汉经济学院',
+      school: '湖北经济学院',
       degree: '本科',
       major: '计算机科学与技术',
       startDate: '2012-09',
