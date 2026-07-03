@@ -21,7 +21,12 @@ import { resume } from '../data/resume.js'
             <a v-for="link in resume.basics.links" :key="link.name"
                :href="link.url" target="_blank" class="resume-link">{{ link.name }}</a>
           </div>
-          <p class="resume-summary">{{ resume.basics.summary }}</p>
+          <div class="resume-summary">
+            <div v-for="(bullet, idx) in resume.basics.summaryBullets" :key="idx" class="summary-bullet">
+              <span class="bullet-num">{{ idx + 1 }}.</span>
+              <span>{{ bullet }}</span>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -37,6 +42,12 @@ import { resume } from '../data/resume.js'
           <ul class="item-details">
             <li v-for="detail in exp.details" :key="detail">{{ detail }}</li>
           </ul>
+          <div v-if="exp.achievements" class="item-achievements">
+            <p class="achievements-title">📊 业绩：</p>
+            <ul class="item-details">
+              <li v-for="achieve in exp.achievements" :key="achieve">{{ achieve }}</li>
+            </ul>
+          </div>
           <div v-if="exp.techStack" class="item-tech">
             <span v-for="tech in exp.techStack" :key="tech" class="tech-tag">{{ tech }}</span>
           </div>
@@ -87,6 +98,10 @@ import { resume } from '../data/resume.js'
           </div>
           <p class="item-subtitle">{{ project.role }}</p>
           <p>{{ project.description }}</p>
+          <div v-if="project.challenge" class="item-challenge">
+            <p class="challenge-title">💡 核心挑战：</p>
+            <p class="challenge-text">{{ project.challenge }}</p>
+          </div>
           <div class="item-tech">
             <span v-for="tech in project.techStack" :key="tech" class="tech-tag">{{ tech }}</span>
           </div>
@@ -177,6 +192,54 @@ import { resume } from '../data/resume.js'
 .resume-summary {
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+.summary-bullet {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.bullet-num {
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
+.item-achievements {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.achievements-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.item-challenge {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--accent-light);
+  border-radius: var(--radius-sm);
+}
+
+.challenge-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.challenge-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .resume-section {
