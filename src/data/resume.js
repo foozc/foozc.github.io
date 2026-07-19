@@ -146,6 +146,7 @@ export const resume = {
       challenge: '首代MatePad Pro Max，全新中置云隼架构，首个板级Cavity喷锡工艺，屏下1200万前置，云晰柔光屏，一体化机身，全新麒麟T93Pro芯片，导致软工与硬工对接工作量指数翻倍。三条分支并行迭代版本，常规旗舰机一款生命周期迭代200+版本，全生命周期迭代600+版本，平均每天1.5个版本，迅速闭环。',
       techStack: ['版本管理', '软硬协同', '质量管控', '系统集成'],
       links: [
+        { name: 'iPad Pro 展示页', internal: true, page: 'ipad-pro' },
         { name: '产品详情', url: '#' }
       ]
     },

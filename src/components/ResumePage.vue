@@ -1,5 +1,13 @@
 <script setup>
 import { resume } from '../data/resume.js'
+
+const emit = defineEmits(['navigate'])
+
+const handleLinkClick = (link) => {
+  if (link.internal && link.page) {
+    emit('navigate', link.page)
+  }
+}
 </script>
 
 <template>
@@ -106,7 +114,12 @@ import { resume } from '../data/resume.js'
             <span v-for="tech in project.techStack" :key="tech" class="tech-tag">{{ tech }}</span>
           </div>
           <div v-if="project.links" class="project-links">
-            <a v-for="link in project.links" :key="link.name" :href="link.url" target="_blank" class="resume-link">
+            <a v-for="link in project.links" :key="link.name"
+               :href="link.internal ? 'javascript:void(0)' : link.url"
+               :target="link.internal ? '_self' : '_blank'"
+               class="resume-link"
+               :class="{ 'resume-link-internal': link.internal }"
+               @click.prevent="handleLinkClick(link)">
               🔗 {{ link.name }}
             </a>
           </div>
@@ -187,6 +200,17 @@ import { resume } from '../data/resume.js'
 .resume-link:hover {
   border-color: var(--accent);
   color: var(--accent) !important;
+}
+
+.resume-link-internal {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--accent) !important;
+  font-weight: 500;
+}
+.resume-link-internal:hover {
+  background: var(--accent);
+  color: white !important;
 }
 
 .resume-summary {

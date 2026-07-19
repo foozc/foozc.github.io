@@ -7,6 +7,7 @@ import AlgorithmPage from './components/AlgorithmPage.vue'
 import AlgorithmDetail from './components/AlgorithmDetail.vue'
 import GamesPage from './components/GamesPage.vue'
 import ArchitecturePage from './components/ArchitecturePage.vue'
+import IPadProPage from './components/IPadProPage.vue'
 import ResumePage from './components/ResumePage.vue'
 import AdminPage from './components/AdminPage.vue'
 
@@ -23,6 +24,7 @@ const pageTitle = computed(() => {
     'algo-detail': '算法详情',
     games: '小游戏',
     architecture: '博客架构',
+    'ipad-pro': 'iPad Pro 展示页',
     admin: '后台管理',
   }
   return map[currentPage.value] || '个人博客'
@@ -63,7 +65,8 @@ const navigateTo = (page) => {
         <AlgorithmDetail v-if="currentPage === 'algo-detail'" :post="currentAlgoPost" @back="navigateTo('algorithm')" />
         <GamesPage v-if="currentPage === 'games'" />
         <ArchitecturePage v-if="currentPage === 'architecture'" />
-        <ResumePage v-if="currentPage === 'resume'" />
+        <IPadProPage v-if="currentPage === 'ipad-pro'" />
+        <ResumePage v-if="currentPage === 'resume'" @navigate="navigateTo" />
         <AdminPage v-if="currentPage === 'admin'" @navigate="navigateTo" />
       </main>
 
