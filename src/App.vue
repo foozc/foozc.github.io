@@ -49,12 +49,12 @@ const navigateTo = (page) => {
 
 <template>
   <div id="app-root">
-    <SideBar @navigate="navigateTo" :currentPage="currentPage" />
+    <SideBar v-if="currentPage !== 'ipad-pro'" @navigate="navigateTo" :currentPage="currentPage" />
 
-    <div class="main-wrapper">
-      <main class="main-content">
-        <!-- 页面标题 -->
-        <div class="page-indicator">
+    <div class="main-wrapper" :class="{ 'ipad-pro-wrapper': currentPage === 'ipad-pro' }">
+      <main class="main-content" :class="{ 'ipad-pro-mode': currentPage === 'ipad-pro' }">
+        <!-- 页面标题 (iPad Pro 模式下隐藏) -->
+        <div v-if="currentPage !== 'ipad-pro'" class="page-indicator">
           <span class="page-dot"></span>
           <span class="page-name">{{ pageTitle }}</span>
         </div>
@@ -65,12 +65,13 @@ const navigateTo = (page) => {
         <AlgorithmDetail v-if="currentPage === 'algo-detail'" :post="currentAlgoPost" @back="navigateTo('algorithm')" />
         <GamesPage v-if="currentPage === 'games'" />
         <ArchitecturePage v-if="currentPage === 'architecture'" />
-        <IPadProPage v-if="currentPage === 'ipad-pro'" />
+        <IPadProPage v-if="currentPage === 'ipad-pro'" @navigate="navigateTo" />
         <ResumePage v-if="currentPage === 'resume'" @navigate="navigateTo" />
         <AdminPage v-if="currentPage === 'admin'" @navigate="navigateTo" />
       </main>
 
-      <footer class="footer">
+      <!-- iPad Pro 模式下隐藏底部 footer -->
+      <footer v-if="currentPage !== 'ipad-pro'" class="footer">
         <div class="container">
           <p>&copy; {{ new Date().getFullYear() }} fuzhichao · 用 ❤️ 和 Vue 3 + Vite 构建</p>
           <p class="footer-tagline">不断学习，持续进步</p>
@@ -148,6 +149,16 @@ body {
 .main-content {
   flex: 1;
   padding: 32px 48px;
+}
+
+/* iPad Pro 全屏展示模式 */
+.main-content.ipad-pro-mode {
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.main-wrapper.ipad-pro-wrapper {
+  margin-left: 0 !important;
 }
 
 /* 页面顶部指示器 */

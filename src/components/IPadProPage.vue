@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const emit = defineEmits(['navigate'])
+const closePage = () => emit('navigate', 'resume')
+
 // ─── 滚动动画 ───
 const activeSection = ref(0)
 const observer = ref(null)
@@ -82,6 +85,12 @@ const specs = [
 
 <template>
   <div class="ipad-pro">
+    <!-- ═══ 关闭按钮 ═══ -->
+    <button class="ipad-close-btn" @click="closePage" title="返回简历">
+      <span class="close-arrow">←</span>
+      <span class="close-text">返回</span>
+    </button>
+
     <!-- ═══ Nav ═══ -->
     <nav class="ipad-nav">
       <div class="nav-inner">
@@ -316,6 +325,46 @@ const specs = [
   background: var(--ipad-bg);
   color: var(--ipad-text);
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ═══ 关闭按钮 ═══ */
+.ipad-close-btn {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  color: var(--ipad-text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  opacity: 0.6;
+}
+.ipad-close-btn:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.25);
+}
+.close-arrow { font-size: 1.1rem; }
+.close-text { font-weight: 500; }
+
+@media (max-width: 768px) {
+  .ipad-close-btn {
+    top: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
 
 /* ═══ Nav ═══ */
