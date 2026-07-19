@@ -27,9 +27,9 @@ const closeMenu = () => { isOpen.value = false }
 
 const navItems = [
   { page: 'resume', icon: '👤', label: '我的简历', desc: 'Personal Resume' },
+  { page: 'ipad-pro', icon: '📱', label: '项目案例-终端平板', desc: 'Product Showcase' },
   { page: 'home', icon: '📝', label: '博客', desc: 'Blog Posts' },
   { page: 'algorithm', icon: '🧮', label: '算法', desc: 'Algorithms' },
-  { page: 'ipad-pro', icon: '📱', label: 'iPad Pro', desc: 'Product Showcase' },
   { page: 'games', icon: '🎮', label: '游戏', desc: 'Mini Games' },
   { page: 'architecture', icon: '🏗️', label: '架构', desc: 'Architecture' },
 ]
