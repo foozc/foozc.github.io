@@ -224,8 +224,8 @@ const highlightKeywords = ['项目管理', '全生命周期', '敏捷思维', 'P
 /* ═══ Hero ═══ */
 .resume-hero {
   text-align: center;
-  margin-bottom: 56px;
-  padding: 48px 0 40px;
+  margin-bottom: 64px;
+  padding: 56px 0 44px;
   position: relative;
 }
 .resume-hero::after {
@@ -243,7 +243,7 @@ const highlightKeywords = ['项目管理', '全生命周期', '敏捷思维', 'P
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
 }
 
 .hero-avatar {
@@ -251,19 +251,14 @@ const highlightKeywords = ['项目管理', '全生命周期', '敏捷思维', 'P
 }
 
 .avatar-ring {
-  width: 96px; height: 96px;
+  width: 108px; height: 108px;
   border-radius: 50%;
-  padding: 4px;
+  padding: 5px;
   background: linear-gradient(135deg, var(--accent), #f472b6);
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin-ring 8s linear infinite;
 }
-@keyframes spin-ring {
-  to { transform: rotate(360deg); }
-}
-
 .avatar-placeholder {
   width: 100%; height: 100%;
   border-radius: 50%;
@@ -271,47 +266,65 @@ const highlightKeywords = ['项目管理', '全生命周期', '敏捷思维', 'P
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: var(--accent);
-  animation: none;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .hero-name {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 4px;
   letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .hero-title {
   color: var(--accent);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 12px;
 }
 
 .hero-contact {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
+  gap: 20px;
   color: var(--text-secondary);
-  font-size: 0.88rem;
-  margin-bottom: 14px;
+  font-size: 0.92rem;
+}
+
+.hero-contact span {
+  padding: 6px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.hero-contact span:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
 }
 
 .hero-links {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
+  margin-top: 4px;
 }
 
 .hero-link {
-  padding: 5px 16px;
+  padding: 7px 20px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--text-secondary) !important;
   text-decoration: none;
   transition: var(--transition);
